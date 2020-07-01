@@ -29,6 +29,14 @@ Route::get('/blog-post', function () {
     return view('blog-post');
 });
 
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+Route::get('/elements', function () {
+    return view('elements');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
