@@ -2,6 +2,7 @@
 
 @include('template.head')
 @include('template.nav')
+
 @include('template.intro')
 @include('template.about')
 @include('template.testimonial')
