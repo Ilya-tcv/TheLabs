@@ -14,7 +14,7 @@ class ElementController extends Controller
      */
     public function index()
     {
-        //
+        return view('elements');
     }
 
     /**

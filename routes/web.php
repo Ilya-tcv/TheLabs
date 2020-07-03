@@ -15,23 +15,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::resource('/', 'AccueilController');
 
-Route::get('/services', function () {
-    return view('services');
-});
+Route::resource('/blog', 'BlogController');
 
-// Route::get('/blog', 'Blog');
+Route::resource('/blog-post', 'BlogPostController');
 
-Route::get('/blog-post', function () {
-    return view('blog-post');
-});
+Route::resource('/contact', 'ContactController');
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::resource('/elements', 'ElementController');
 
-Route::get('/elements', function () {
-    return view('elements');
-});
+Route::resource('/services', 'ServiceController');
+
+// JE SAIS PAS
 
 Auth::routes();
 
