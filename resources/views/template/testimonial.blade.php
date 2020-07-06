@@ -5,7 +5,7 @@
 			<div class="row">
 				<div class="col-md-8 col-md-offset-4">
 					<div class="section-title left">
-						<h2>What our clients say</h2>
+						<h2>{!! str_replace('(', '<span>', str_replace(')', '</span>', $title->testimonial_title)) !!}</h2>
 					</div>
 					<div class="owl-carousel" id="testimonial-slide">
 						@foreach ($testimonial as $item)

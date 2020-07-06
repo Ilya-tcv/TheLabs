@@ -1,11 +1,11 @@
 		<!-- About content -->
 		<div class="about-contant">
 			<div class="container">
-				@foreach ($aboutSection as $item)
-				    
+				
 				<div class="section-title">
-					<h2> {{$item -> title}} </h2>
+					<h2>{!! str_replace('(', '<span>', str_replace(')', '</span>', $title -> about_title)) !!}</h2>
 				</div>
+				@foreach ($aboutSection as $item)
 				<div class="row">
 					<div class="col-md-6">
 						<p> {{$item -> desc1}} </p>

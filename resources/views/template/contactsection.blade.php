@@ -2,19 +2,19 @@
 	<div class="contact-section spad fix">
 		<div class="container">
 			<div class="row">
-				@foreach ($contact as $item)
 				<!-- contact info -->
 				<div class="col-md-5 col-md-offset-1 contact-info col-push">
 					<div class="section-title left">
-						<h2>Contact us</h2>
+						<h2>{!! str_replace('(', '<span>', str_replace(')', '</span>', $title->contact_title)) !!}</h2>
 					</div>
+					@foreach ($contact as $item)
 					<p> {{$item -> desc}} </p>
 					<h3 class="mt60"> {{$item -> title}} </h3>
 					<p class="con-item"> {{$item -> road}} <br> {{$item -> city}} </p>
 					<p class="con-item"> {{$item -> phone}} </p>
 					<p class="con-item"> {{$item -> mail}} </p>
+					@endforeach
 				</div>
-				@endforeach
 				<!-- contact form -->
 				<div class="col-md-6 col-pull">
 					<form class="form-class" id="con_form">
