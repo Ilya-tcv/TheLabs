@@ -5,6 +5,7 @@
 
 @include('template.intro')
 @include('template.about')
+@include('template.aboutsection')
 @include('template.testimonial')
 @include('template.servicesection')
 @include('template.team')

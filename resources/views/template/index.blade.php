@@ -18,6 +18,7 @@
 @yield('features')
 @yield('servicecards')
 @yield('about')
+@yield('aboutsection')
 @yield('testimonial')
 @yield('servicesection')
 @yield('elementsection')
