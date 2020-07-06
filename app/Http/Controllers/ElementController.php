@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Element;
+use App\NavTitre;
 use Illuminate\Http\Request;
 
 class ElementController extends Controller
@@ -14,7 +15,10 @@ class ElementController extends Controller
      */
     public function index()
     {
-        return view('elements');
+        // Vars
+        $NavTitre = NavTitre::all();
+    
+        return view('elements', compact('NavTitre'));
     }
 
     /**

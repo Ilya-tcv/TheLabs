@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\BlogPost;
+use App\NavTitre;
+use App\NavLogo;
 use Illuminate\Http\Request;
 
 class BlogPostController extends Controller
@@ -14,7 +16,11 @@ class BlogPostController extends Controller
      */
     public function index()
     {
-        return view('blog-post');
+        // Vars
+        $NavTitre = NavTitre::all();
+        $NavLogo = NavLogo::all();
+    
+        return view('blog-post', compact('NavTitre', 'NavLogo'));
     }
 
     /**

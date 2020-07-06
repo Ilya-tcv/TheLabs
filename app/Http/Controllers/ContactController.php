@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Contact;
+use App\NavTitre;
+use App\NavLogo;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -14,7 +16,11 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view ('contact');
+        // Vars
+        $NavTitre = NavTitre::all();
+        $NavLogo = NavLogo::all();
+    
+        return view('contact', compact('NavTitre', 'NavLogo'));
     }
 
     /**

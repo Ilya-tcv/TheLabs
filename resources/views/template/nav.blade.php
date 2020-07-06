@@ -1,18 +1,19 @@
 	<!-- Header section -->
 	<header class="header-section">
 		<div class="logo">
-			<img src="img/logo.png" alt=""><!-- Logo -->
+			@foreach ($NavLogo as $item)
+			<img src=" {{ $item -> link }} " alt=" {{ $item -> name }} "><!-- Logo -->
+			@endforeach
 		</div>
 		<!-- Navigation -->
 		<div class="responsive"><i class="fa fa-bars"></i></div>
 		<nav>
 			<ul class="menu-list">
-				<li><a href="/">Home</a></li>
-				<li><a href="services">Services</a></li>
-				<li><a href="blog">Blog</a></li>
-				<li><a href="contact">Contact</a></li>
-				<li><a href="elements">Elements</a></li>
-				<li><a href="home">Backoffice</a></li>
+				@foreach ($NavTitre as $item)
+				<li>
+					<a href="{{ $item -> link }}">{{ $item -> title }}</a>
+				</li>
+				@endforeach
 			</ul>
 		</nav>
 	</header>
