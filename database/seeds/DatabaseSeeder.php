@@ -19,5 +19,6 @@ class DatabaseSeeder extends Seeder
         $this->call(VideoSeeder::class);
         $this->call(TestimonialSeeder::class);
         $this->call(ServiceSectionSeeder::class);
+        $this->call(TeamSeeder::class);
     }
 }
