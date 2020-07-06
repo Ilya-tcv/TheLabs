@@ -21,5 +21,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ServiceSectionSeeder::class);
         $this->call(TeamSeeder::class);
         $this->call(PromotionSeeder::class);
+        $this->call(FormSeeder::class);
+        $this->call(TitleSeeder::class);
     }
 }
