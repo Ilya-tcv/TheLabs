@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Accueil;
-use App\NavTitre;
-use App\NavLogo;
 use App\Intro;
 use Illuminate\Http\Request;
 
-class AccueilController extends Controller
+class IntroController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,12 +14,7 @@ class AccueilController extends Controller
      */
     public function index()
     {
-        // Vars
-        $NavTitre = NavTitre::all();
-        $NavLogo = NavLogo::all();
-        $intro = Intro::all();
-    
-        return view('index', compact('NavTitre', 'NavLogo', 'intro'));
+        //
     }
 
     /**
@@ -49,10 +41,10 @@ class AccueilController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Accueil  $accueil
+     * @param  \App\Intro  $intro
      * @return \Illuminate\Http\Response
      */
-    public function show(Accueil $accueil)
+    public function show(Intro $intro)
     {
         //
     }
@@ -60,10 +52,10 @@ class AccueilController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Accueil  $accueil
+     * @param  \App\Intro  $intro
      * @return \Illuminate\Http\Response
      */
-    public function edit(Accueil $accueil)
+    public function edit(Intro $intro)
     {
         //
     }
@@ -72,10 +64,10 @@ class AccueilController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Accueil  $accueil
+     * @param  \App\Intro  $intro
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Accueil $accueil)
+    public function update(Request $request, Intro $intro)
     {
         //
     }
@@ -83,10 +75,10 @@ class AccueilController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Accueil  $accueil
+     * @param  \App\Intro  $intro
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Accueil $accueil)
+    public function destroy(Intro $intro)
     {
         //
     }
