@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
         $this->call(NavLogoSeeder::class);
         $this->call(IntroSeeder::class);
         $this->call(AboutSeeder::class);
+        $this->call(AboutSectionSeeder::class);
     }
 }

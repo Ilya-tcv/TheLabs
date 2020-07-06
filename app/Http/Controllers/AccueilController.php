@@ -7,6 +7,7 @@ use App\NavTitre;
 use App\NavLogo;
 use App\Intro;
 use App\About;
+use App\AboutSection;
 use Illuminate\Http\Request;
 
 class AccueilController extends Controller
@@ -23,8 +24,9 @@ class AccueilController extends Controller
         $NavLogo = NavLogo::all();
         $intro = Intro::all();
         $about = About::all();
+        $aboutSection = AboutSection::all();
     
-        return view('index', compact('NavTitre', 'NavLogo', 'intro', 'about'));
+        return view('index', compact('NavTitre', 'NavLogo', 'intro', 'about', 'aboutSection'));
     }
 
     /**
