@@ -8,6 +8,7 @@ use App\NavLogo;
 use App\Intro;
 use App\About;
 use App\AboutSection;
+use App\Testimonial;
 use App\Video;
 use Illuminate\Http\Request;
 
@@ -27,8 +28,9 @@ class AccueilController extends Controller
         $about = About::all();
         $aboutSection = AboutSection::all();
         $video = Video::all();
+        $testimonial = Testimonial::all();
     
-        return view('index', compact('NavTitre', 'NavLogo', 'intro', 'about', 'aboutSection', 'video'));
+        return view('index', compact('NavTitre', 'NavLogo', 'intro', 'about', 'aboutSection', 'video', 'testimonial'));
     }
 
     /**
