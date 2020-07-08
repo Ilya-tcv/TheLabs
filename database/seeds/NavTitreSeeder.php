@@ -29,10 +29,6 @@ class NavTitreSeeder extends Seeder
             'link' => '/contact'
         ]);
         DB::table('nav_titres') -> insert([
-            'title' => 'Elements',
-            'link' => '/elements'
-        ]);
-        DB::table('nav_titres') -> insert([
             'title' => 'Backoffice',
             'link' => '/home'
         ]);
