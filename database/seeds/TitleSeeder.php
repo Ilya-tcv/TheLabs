@@ -18,7 +18,7 @@ class TitleSeeder extends Seeder
             "service_title" =>"GET IN THE (LAB) AND SEE THE SERVICES",
             "team_title" => "GET IN THE LAB AND MEET (THE TEAM)",
             "contact_title" => "CONTACT (US)",
-            "servicePrime_title" => "GET IN THE LAB sAND (DISCOVER) THE WORLD",
+            "features_title" => "GET IN THE LAB AND (DISCOVER) THE WORLD",
         ]);
     }
 }

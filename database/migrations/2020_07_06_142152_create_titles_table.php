@@ -20,7 +20,7 @@ class CreateTitlesTable extends Migration
             $table->string("service_title");
             $table->string("team_title");
             $table->string("contact_title");
-            $table->string("servicePrime_title");
+            $table->string("features_title");
             $table->timestamps();
         });
     }

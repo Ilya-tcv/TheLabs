@@ -3,7 +3,7 @@
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="section-title">
-				<h2>{!! str_replace('(', '<span>', str_replace(')', '</span>', $title->title)) !!}</h2>
+				<h2>{!! str_replace('(', '<span>', str_replace(')', '</span>', $title->features_title)) !!}</h2>
 			</div>
 			<div class="row">
 				<!-- feature item -->
