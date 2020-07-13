@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Blog;
 use App\NavTitre;
 use App\NavLogo;
+use App\Tag;
 use Illuminate\Http\Request;
 
 class BlogController extends Controller
@@ -19,8 +20,9 @@ class BlogController extends Controller
         // Vars
         $NavTitre = NavTitre::all();
         $NavLogo = NavLogo::all();
+        $tag = Tag::all();
     
-        return view('blog', compact('NavTitre', 'NavLogo'));
+        return view('blog', compact('NavTitre', 'NavLogo', 'tag'));
     }
 
     /**
