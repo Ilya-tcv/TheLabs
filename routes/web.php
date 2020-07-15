@@ -25,6 +25,14 @@ Route::resource('/elements', 'ElementController');
 
 Route::resource('/services', 'ServiceController');
 
+// ROUTES BACKOFFICE
+
+Route::get('admin/welcome', 'AccueilController@indexAll');
+Route::get('admin/services', 'ServiceController@indexAll');
+Route::get('admin/blog', 'BlogController@indexAll');
+Route::get('admin/blog-post', 'BlogPostController@indexAll');
+Route::get('admin/contact', 'ContactController@indexAll');
+
 // JE SAIS PAS
 
 Auth::routes();

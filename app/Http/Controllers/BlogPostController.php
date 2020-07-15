@@ -94,4 +94,16 @@ class BlogPostController extends Controller
     {
         //
     }
+
+    public function indexAll()
+    {
+        // Vars
+        $NavTitre = NavTitre::all();
+        $NavLogo = NavLogo::all();
+        $tag = Tag::all();
+        $categorie  = Categorie::all();
+        $article = Article::all();
+    
+        return view('backoffice/blog-post', compact('NavTitre', 'NavLogo', 'tag', 'categorie', 'article'));
+    }
 }

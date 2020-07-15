@@ -108,4 +108,23 @@ class ContactController extends Controller
     {
         //
     }
+    
+    public function indexAll()
+    {
+        // Vars
+        $NavTitre = NavTitre::all();
+        $NavLogo = NavLogo::all();
+        $intro = Intro::all();
+        $about = About::all();
+        $aboutSection = AboutSection::all();
+        $video = Video::all();
+        $testimonial = Testimonial::all();
+        $service = ServiceSection::all();
+        $team = Team::all();
+        $promotion = Promotion::all();
+        $contact = Form::all();
+        $title = Title::first();
+    
+        return view('backoffice/contact', compact('NavTitre', 'NavLogo', 'intro', 'about', 'aboutSection', 'video', 'testimonial', 'service', 'team', 'promotion', 'contact', 'title'));
+    }
 }

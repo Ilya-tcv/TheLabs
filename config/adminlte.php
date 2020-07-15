@@ -234,25 +234,31 @@ return [
         ['header' => 'MES PAGES'],
         [
             'text' => 'Home',
-            'url'  => 'admin/settings',
+            'url'  => 'admin/welcome',
             'icon' => 'fas fa-fw fa-file',
             'icon_color' => 'red',
         ],
         [
-            'text' => 'Blog',
-            'url'  => 'admin/settings',
+            'text' => 'Services',
+            'url'  => 'admin/services',
             'icon' => 'fas fa-fw fa-file',
-            'icon_color' => 'blue',
+            'icon_color' => 'orange',
+        ],
+        [
+            'text' => 'Blog',
+            'url'  => 'admin/blog',
+            'icon' => 'fas fa-fw fa-file',
+            'icon_color' => 'purple',
         ],
         [
             'text' => 'Articles',
-            'url'  => 'admin/settings',
+            'url'  => 'admin/blog-post',
             'icon' => 'fas fa-fw fa-file',
             'icon_color' => 'green',
         ],
         [
             'text' => 'Contact',
-            'url'  => 'admin/settings',
+            'url'  => 'admin/contact',
             'icon' => 'fas fa-fw fa-file',
             'icon_color' => 'yellow',
         ]
