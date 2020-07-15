@@ -67,9 +67,12 @@ class NavTitreController extends Controller
      * @param  \App\NavTitre  $navTitre
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, NavTitre $navTitre)
+    public function update($id)
     {
-        //
+        $NavTitre = NavTitre::find($id);
+        $NavTitre -> title=request('title');
+        $NavTitre ->save();
+        return redirect()->back();
     }
 
     /**

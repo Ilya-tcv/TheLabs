@@ -21,7 +21,25 @@
 
     {{-- Custom stylesheets (pre AdminLTE) --}}
     @yield('adminlte_css_pre')
+    
+    {{-- CUSTOM -----------}}
+    {{-- Flaticon --}}
+    <link rel="stylesheet" href="/css/flaticon.css">
+    
+    <!-- Favicon -->
+	<link href="img/favicon.ico" rel="shortcut icon"/>
 
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,500,700|Roboto:300,400,700" rel="stylesheet">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>
+	<link rel="stylesheet" href="css/flaticon.css"/>
+	<link rel="stylesheet" href="css/owl.carousel.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    {{-- END CUSTOM --------}}
+    
     {{-- Base Stylesheets --}}
     @if(!config('adminlte.enabled_laravel_mix'))
         <link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">

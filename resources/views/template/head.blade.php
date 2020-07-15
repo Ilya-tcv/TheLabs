@@ -7,6 +7,7 @@
 	<meta name="description" content="Labs - Design Studio">
 	<meta name="keywords" content="lab, onepage, creative, html">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
 	<!-- Favicon -->
 	<link href="img/favicon.ico" rel="shortcut icon"/>
 

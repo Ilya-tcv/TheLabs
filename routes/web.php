@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,13 +34,16 @@ Route::get('admin/blog', 'BlogController@indexAll');
 Route::get('admin/blog-post', 'BlogPostController@indexAll');
 Route::get('admin/contact', 'ContactController@indexAll');
 
+// ROUTES CRUD
+
+Route::resource('/navtitre', 'NavTitreController');
+
+
 // JE SAIS PAS
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
 
 Route::get('/home', function() {
     return view('home');
