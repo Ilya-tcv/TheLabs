@@ -67,9 +67,15 @@ class AboutController extends Controller
      * @param  \App\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, About $about)
+    public function update($id)
     {
-        //
+        $about = About::find($id);
+        $about -> title = request('title');   
+        $about -> text = request('text');
+        $about -> icon = request('icon');
+        $about ->save();
+
+        return redirect()->back();
     }
 
     /**

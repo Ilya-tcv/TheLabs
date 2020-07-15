@@ -131,11 +131,33 @@
                                     <div class="col-md-4 col-sm-6 text-center">
                                         <div class="lab-card">
                                             <div class="icon">
-                                                <i style="font-size: 60px" class=" {{ $item -> icon }} "></i>
+                                                <i style="font-size: 60px" class=" {{ $item -> icon }}"></i>
                                             </div>
                                             <h2> {{ $item -> title }} </h2>
                                             <p> {{ $item -> text }} </p>
                                         </div>
+
+                                        {{-- BTN --}}
+                                        <form method="post" action="/about/{{ $item->id }}">
+                                            @csrf
+                                            @method('put')
+
+                                            <div class="form-group">
+                                                <input type="text" value="{{ $item -> title }}" name="title"
+                                                    class="form-control " id="" aria-describedby="emailHelp">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" value="{{ $item -> text }}" name="text"
+                                                    class="form-control " id="" aria-describedby="emailHelp">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" value="{{ $item -> icon }}" name="icon"
+                                                    class="form-control " id="" aria-describedby="emailHelp">
+                                            </div>
+                                            <div class="text-center">
+                                                <button type="submit" class="btn btn-primary">Modifier</button>
+                                            </div>
+                                        </form>
                                     </div>
                                 @endforeach
                             </div>

@@ -37,6 +37,7 @@ Route::get('admin/contact', 'ContactController@indexAll');
 // ROUTES CRUD
 
 Route::resource('/navtitre', 'NavTitreController');
+Route::resource('/about', 'AboutController');
 
 
 // JE SAIS PAS
