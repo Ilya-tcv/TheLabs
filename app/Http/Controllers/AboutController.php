@@ -33,9 +33,16 @@ class AboutController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        $about = new About();
+
+        $about -> title = request('title');
+        $about -> text = request('text');
+        $about -> icon = request('icon');
+
+        $about->save();
+        return redirect()->back();
     }
 
     /**
@@ -84,8 +91,9 @@ class AboutController extends Controller
      * @param  \App\About  $about
      * @return \Illuminate\Http\Response
      */
-    public function destroy(About $about)
+    public function destroy($id)
     {
-        //
+        About::where('id', $id)->delete();
+        return redirect()->back();
     }
 }
