@@ -3,7 +3,7 @@
 		<div class="overlay"></div>
 		<div class="container text-right">
 			<div class="page-info">
-				<h2> {{ $NavTitre[2] -> title }} </h2>
+				<h2> {{ $NavTitre[1] -> title }} </h2>
 				<div class="page-links">
 					<a href="{{ $NavTitre[0] -> link }}">{{ $NavTitre[0] -> title }}</a>
 					<span>{{ $NavTitre[2] -> title }}</span>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
 use App\Blog;
 use App\Categorie;
 use App\NavTitre;
@@ -23,8 +24,9 @@ class BlogController extends Controller
         $NavLogo = NavLogo::all();
         $tag = Tag::all();
         $categorie  =Categorie::all();
+        $article = Article::all();
     
-        return view('blog', compact('NavTitre', 'NavLogo', 'tag', 'categorie'));
+        return view('blog', compact('NavTitre', 'NavLogo', 'tag', 'categorie', 'article'));
     }
 
     /**

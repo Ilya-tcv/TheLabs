@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\BlogPost;
 use App\NavTitre;
 use App\NavLogo;
+use App\Categorie;
+use App\Article;
+use App\Tag;
 use Illuminate\Http\Request;
 
 class BlogPostController extends Controller
@@ -19,8 +22,11 @@ class BlogPostController extends Controller
         // Vars
         $NavTitre = NavTitre::all();
         $NavLogo = NavLogo::all();
+        $tag = Tag::all();
+        $categorie  = Categorie::all();
+        $article = Article::all();
     
-        return view('blog-post', compact('NavTitre', 'NavLogo'));
+        return view('blog-post', compact('NavTitre', 'NavLogo', 'tag', 'categorie', 'article'));
     }
 
     /**
