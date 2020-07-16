@@ -5,7 +5,7 @@
 				<!-- contact info -->
 				<div class="col-md-5 col-md-offset-1 contact-info col-push">
 					<div class="section-title left">
-						<h2>{!! str_replace('(', '<span>', str_replace(')', '</span>', $title->contact_title)) !!}</h2>
+						<h2>{!! str_replace('(', '<span>', str_replace(')', '</span>', $title[4]->title)) !!}</h2>
 					</div>
 					@foreach ($contact as $item)
 					<p> {{$item -> desc}} </p>

@@ -38,7 +38,7 @@ class ServiceController extends Controller
         $team = Team::all();
         $promotion = Promotion::all();
         $contact = Form::all();
-        $title = Title::first();
+        $title = Title::all();
     
         return view('services', compact('NavTitre', 'NavLogo', 'intro', 'about', 'aboutSection', 'video', 'testimonial', 'service', 'team', 'promotion', 'contact', 'title'));
     }
@@ -123,7 +123,7 @@ class ServiceController extends Controller
         $team = Team::all();
         $promotion = Promotion::all();
         $contact = Form::all();
-        $title = Title::first();
+        $title = Title::all();
     
         return view('backoffice/services', compact('NavTitre', 'NavLogo', 'intro', 'about', 'aboutSection', 'video', 'testimonial', 'service', 'team', 'promotion', 'contact', 'title'));
     }

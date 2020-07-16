@@ -67,11 +67,16 @@ class TitleController extends Controller
      * @param  \App\Title  $title
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Title $title)
-    {
-        //
-    }
 
+    public function update($id)
+    {
+        $title = Title::find($id);
+        $title -> title = request('title');
+
+        $title ->save();
+
+        return redirect()->back();
+    }
     /**
      * Remove the specified resource from storage.
      *

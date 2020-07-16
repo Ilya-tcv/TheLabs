@@ -2,7 +2,7 @@
 	<div class="services-section spad">
 		<div class="container">
 			<div class="section-title dark">
-				<h2>{!! str_replace('(', '<span>', str_replace(')', '</span>', $title->service_title)) !!}</h2>
+				<h2>{!! str_replace('(', '<span>', str_replace(')', '</span>', $title[2] -> title)) !!}</h2>
 			</div>
 			<div class="row">
 				@foreach ($service as $item)

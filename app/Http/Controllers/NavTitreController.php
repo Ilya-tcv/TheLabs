@@ -33,9 +33,15 @@ class NavTitreController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        $NavTitre = new NavTitre();
+
+        $NavTitre -> title = request('title');
+        $NavTitre -> link = request('link');
+
+        $NavTitre->save();
+        return redirect()->back();
     }
 
     /**

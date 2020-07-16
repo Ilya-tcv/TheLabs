@@ -13,12 +13,22 @@ class TitleSeeder extends Seeder
     public function run()
     {
         DB::table('titles')->insert([
-            "about_title" =>"GET IN (THE LAB) AND DISCOVER THE WORLD",
-            "testimonial_title" =>"WHAT OUR (CLIENTS) SAY",
-            "service_title" =>"GET IN THE (LAB) AND SEE THE SERVICES",
-            "team_title" => "GET IN THE LAB AND MEET (THE TEAM)",
-            "contact_title" => "CONTACT (US)",
-            "features_title" => "GET IN THE LAB AND (DISCOVER) THE WORLD",
+            "title" =>"GET IN (THE LAB) AND DISCOVER THE WORLD",
+        ]);
+        DB::table('titles')->insert([
+            "title" =>"WHAT OUR (CLIENTS) SAY",
+        ]);
+        DB::table('titles')->insert([
+            "title" =>"GET IN THE (LAB) AND SEE THE SERVICES",
+        ]);
+        DB::table('titles')->insert([
+            "title" =>"GET IN THE LAB AND MEET (THE TEAM)",
+        ]);
+        DB::table('titles')->insert([
+            "title" =>"CONTACT (US)",
+        ]);
+        DB::table('titles')->insert([
+            "title" =>"GET IN THE LAB AND (DISCOVER) THE WORLD",
         ]);
     }
 }

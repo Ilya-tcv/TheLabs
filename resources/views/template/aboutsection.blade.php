@@ -3,7 +3,7 @@
 			<div class="container">
 				
 				<div class="section-title">
-					<h2>{!! str_replace('(', '<span>', str_replace(')', '</span>', $title -> about_title)) !!}</h2>
+					<h2>{!! str_replace('(', '<span>', str_replace(')', '</span>', $title[0] -> title)) !!}</h2>
 				</div>
 				@foreach ($aboutSection as $item)
 				<div class="row">
