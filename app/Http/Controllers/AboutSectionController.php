@@ -67,9 +67,23 @@ class AboutSectionController extends Controller
      * @param  \App\AboutSection  $aboutSection
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, AboutSection $aboutSection)
+    public function update($id)
     {
-        //
+        $aboutSection = AboutSection::find($id);
+
+        if (request('btn') != NULL) {
+            $aboutSection -> btn = request('btn');
+            $aboutSection ->save();
+        } else if (request('desc1') != NULL) {
+            $aboutSection -> desc1 = request('desc1');
+            $aboutSection ->save();
+        } else if (request('desc2') != NULL){
+            $aboutSection -> desc2 = request('desc2');
+            $aboutSection ->save();
+        }
+        
+
+        return redirect()->back();
     }
 
     /**

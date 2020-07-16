@@ -39,6 +39,7 @@ Route::get('admin/contact', 'ContactController@indexAll');
 Route::resource('/navtitre', 'NavTitreController');
 Route::resource('/about', 'AboutController');
 Route::resource('/title', 'TitleController');
+Route::resource('/aboutSec', 'AboutSectionController');
 
 
 // JE SAIS PAS

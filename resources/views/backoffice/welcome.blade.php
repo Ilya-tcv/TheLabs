@@ -210,33 +210,140 @@
             </div>
         </div>
     </div>
-    
+
+
+    {{-- SECTION TEXT & BTN --}}
     <div class="row">
         <div class="col-12">
             <div class="card">
                 <div class="card-body text-center">
-                    {{-- CAROUSSEL -------------------- --}}
-                    <p class="mb-2">-- TITRES --</p>
-                    <p style="font-size: small">Mettre entre ( ) pour afficher en vert</p>
+                    {{-- ABOUT & BTN NAME -------------------- --}}
+                    <p class="mb-2">-- SECTION ABOUT & BTN VIDEO --</p>
                     <hr>
                     <div class="container">
                         <div class="row">
-                            @foreach($title as $item)
-                                <div class="col-4">
-                                    {{-- EDIT --}}
-                                    <form method="post" action="/title/{{ $item->id }}" class="mb-1">
-                                        @csrf
-                                        @method('put')
+                            @foreach($aboutSection as $item)
+                                {{-- EDIT DESC 1 --}}
+                                <div class="col-md-6">
+                                    <p>Description 1</p>
+                                    <p> {{ $item -> desc1 }} </p>
+                                    
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#desc1">
+                                    Modifier
+                                </button>
+                            </div>
 
-                                        <div class="form-group">
-                                            <input type="text" value="{{ $item -> title }}" name="title"
-                                                class="form-control " id="" aria-describedby="emailHelp">
-                                        </div>
-                                        <div class="text-center">
-                                            <button type="submit" class="btn btn-primary">Modifier</button>
+                                {{-- MODAL --}}
+                                <div id="desc1" class="modal" tabindex="-1" role="dialog">
+                                    <form method="post" action="/aboutSec/{{ $item->id }}" class="mb-1">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Modifier le texte</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+
+                                                {{-- BODY --}}
+                                                <div class="modal-body">
+                                                    @csrf
+                                                    @method('put')
+
+                                                    <div class="form-group">
+                                                        <input type="text" value="{{$item -> desc1}}" name="desc1"
+                                                            class="form-control " id="" aria-describedby="emailHelp">
+                                                    </div>
+
+                                                    {{-- BOUTONS --}}
+                                                    <div class="modal-footer">
+                                                        <button type="submit" class="btn btn-primary">Create</button>
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </form>
-                                    <hr>
+                                </div>
+                                {{-- END MODAL --}}
+
+                                {{-- EDIT DESC 2 --}}
+                                <div class="col-md-6">
+                                    <p>Description 2</p>
+                                    <p> {{ $item -> desc2 }} </p>
+                                    
+                                    <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal"
+                                    data-target="#desc2">
+                                    Modifier
+                                </button>
+                            </div>
+
+                                {{-- MODAL --}}
+                                <div id="desc2" class="modal" tabindex="-1" role="dialog">
+                                    <form method="post" action="/aboutSec/{{ $item->id }}" class="mb-1">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Modifier le texte</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+
+                                                {{-- BODY --}}
+                                                <div class="modal-body">
+                                                    @csrf
+                                                    @method('put')
+
+                                                    <div class="form-group">
+                                                        <input type="text" value="{{$item -> desc2}}" name="desc2"
+                                                            class="form-control " id="" aria-describedby="emailHelp">
+                                                    </div>
+
+                                                    {{-- BOUTONS --}}
+                                                    <div class="modal-footer">
+                                                        <button type="submit" class="btn btn-primary">Create</button>
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                {{-- END MODAL --}}
+
+
+                                {{-- EDIT BTN --}}
+                                <div class="col-12">
+                                    <div class="text-center">
+                                        <p>Nom du bouton</p>
+
+                                        <form method="post" action="/aboutSec/{{ $item->id }}" class="mb-1">
+                                            @csrf
+                                            @method('put')
+                                            <div class="d-flex justify-content-center">
+
+                                                <div class="form-group col-3">
+                                                    <input type="text" value="{{ $item -> btn }}" name="btn"
+                                                        class="form-control " id="" aria-describedby="emailHelp">
+                                                </div>
+                                            </div>
+                                            <div class="text-center">
+                                                <button type="submit" class="btn btn-primary">Modifier</button>
+                                            </div>
+                                        </form>
+                                        <hr>
+
+
+
+                                    </div>
                                 </div>
                             @endforeach
                         </div>
