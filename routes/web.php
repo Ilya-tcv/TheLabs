@@ -40,6 +40,7 @@ Route::resource('/navtitre', 'NavTitreController');
 Route::resource('/about', 'AboutController');
 Route::resource('/title', 'TitleController');
 Route::resource('/aboutSec', 'AboutSectionController');
+Route::resource('/video', 'VideoController');
 
 
 // JE SAIS PAS

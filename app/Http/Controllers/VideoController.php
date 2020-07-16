@@ -67,9 +67,16 @@ class VideoController extends Controller
      * @param  \App\Video  $video
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Video $video)
+    public function update($id)
     {
-        //
+        $aboutSection = Video::find($id);
+
+        if (request('link') != NULL) {
+            $aboutSection -> videolink = request('link');
+            $aboutSection ->save();
+        }
+        
+        return redirect()->back();
     }
 
     /**

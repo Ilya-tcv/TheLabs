@@ -176,6 +176,7 @@
         </div>
     </div>
 
+    {{-- TITRES ---------------------------------------- --}}
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -212,7 +213,7 @@
     </div>
 
 
-    {{-- SECTION TEXT & BTN --}}
+    {{-- SECTION TEXT & BTN -------------------------------------- --}}
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -227,13 +228,13 @@
                                 <div class="col-md-6">
                                     <p>Description 1</p>
                                     <p> {{ $item -> desc1 }} </p>
-                                    
+
                                     <!-- Button trigger modal -->
                                     <button type="button" class="btn btn-primary" data-toggle="modal"
-                                    data-target="#desc1">
-                                    Modifier
-                                </button>
-                            </div>
+                                        data-target="#desc1">
+                                        Modifier
+                                    </button>
+                                </div>
 
                                 {{-- MODAL --}}
                                 <div id="desc1" class="modal" tabindex="-1" role="dialog">
@@ -254,8 +255,9 @@
                                                     @method('put')
 
                                                     <div class="form-group">
-                                                        <input type="text" value="{{$item -> desc1}}" name="desc1"
-                                                            class="form-control " id="" aria-describedby="emailHelp">
+                                                        <input type="text" value="{{ $item -> desc1 }}"
+                                                            name="desc1" class="form-control " id=""
+                                                            aria-describedby="emailHelp">
                                                     </div>
 
                                                     {{-- BOUTONS --}}
@@ -275,13 +277,13 @@
                                 <div class="col-md-6">
                                     <p>Description 2</p>
                                     <p> {{ $item -> desc2 }} </p>
-                                    
+
                                     <!-- Button trigger modal -->
                                     <button type="button" class="btn btn-primary" data-toggle="modal"
-                                    data-target="#desc2">
-                                    Modifier
-                                </button>
-                            </div>
+                                        data-target="#desc2">
+                                        Modifier
+                                    </button>
+                                </div>
 
                                 {{-- MODAL --}}
                                 <div id="desc2" class="modal" tabindex="-1" role="dialog">
@@ -302,8 +304,9 @@
                                                     @method('put')
 
                                                     <div class="form-group">
-                                                        <input type="text" value="{{$item -> desc2}}" name="desc2"
-                                                            class="form-control " id="" aria-describedby="emailHelp">
+                                                        <input type="text" value="{{ $item -> desc2 }}"
+                                                            name="desc2" class="form-control " id=""
+                                                            aria-describedby="emailHelp">
                                                     </div>
 
                                                     {{-- BOUTONS --}}
@@ -340,9 +343,6 @@
                                             </div>
                                         </form>
                                         <hr>
-
-
-
                                     </div>
                                 </div>
                             @endforeach
@@ -353,4 +353,43 @@
         </div>
     </div>
 
+    {{-- VIDEO ------------------- --}}
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body text-center">
+                    {{-- CAROUSSEL -------------------- --}}
+                    <p class="mb-2">-- VIDEO --</p>
+                    <hr>
+                    <div class="container">
+                        <div class="row">
+                            @foreach($video as $item)
+                                <div class="col-3"></div>
+                                <div class="col-6">
+                                    <p>Changer l'URL</p>
+                                    {{-- EDIT --}}
+                                    <form method="post" action="/video/{{ $item->id }}" class="mb-1">
+                                        @csrf
+                                        @method('put')
+
+                                        <div class="form-group">
+                                            <input type="text" value="{{ $item -> videolink }}" name="link"
+                                                class="form-control " id="" aria-describedby="emailHelp">
+                                        </div>
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-primary">Modifier</button>
+                                        </div>
+                                    </form>
+                                    <hr>
+                                </div>
+                                <div class="col-3"></div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
     @stop
