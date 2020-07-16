@@ -11,7 +11,7 @@
 	                @endphp
 
 				{{-- LOOP --}}
-	                @foreach($service as $item)
+	                @foreach($service -> shuffle() as $item)
 	                    <!-- single card -->
 	                    <div class="col-md-4 col-sm-6">
 	                        <div class="lab-card">

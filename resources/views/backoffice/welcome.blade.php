@@ -103,8 +103,6 @@
                                             <input type="text" placeholder="Icon" value="" name="icon"
                                                 class="form-control " id="" aria-describedby="emailHelp">
                                         </div>
-                                        <div class="text-center">
-                                        </div>
 
                                         {{-- BOUTONS --}}
                                         <div class="modal-footer">
@@ -391,5 +389,154 @@
         </div>
     </div>
 
-    
+    {{-- TESTIMONIAL CRUDS --}}
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body text-center">
+                    {{-- ABOUT -------------------- --}}
+                    <p class="mb-2">-- TESTIMONIALS --</p>
+                    <hr>
+
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#TestiCreate">
+                        Créer
+                    </button>
+
+                    {{-- MODAL --}}
+                    <div id="TestiCreate" class="modal" tabindex="-1" role="dialog">
+                        <form method="post" action="/testimonials" class="mb-1">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Ajouter un avis</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+
+                                    {{-- BODY --}}
+                                    <div class="modal-body">
+                                        @csrf
+                                        @method('post')
+
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Nom" name="name" class="form-control " id=""
+                                                aria-describedby="emailHelp">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Job" value="" name="job"
+                                                class="form-control " id="" aria-describedby="emailHelp">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Description" value="" name="desc"
+                                                class="form-control " id="" aria-describedby="emailHelp">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" placeholder="Lien vers l'image (img/...)" value=""
+                                                name="link" class="form-control " id="" aria-describedby="emailHelp">
+                                        </div>
+
+                                        {{-- BOUTONS --}}
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary">Create</button>
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    {{-- END MODAL --}}
+
+                </div>
+                <div class="card-section">
+                    <div class="container">
+                        <div class="row">
+                            <!-- single card -->
+                            @foreach($testimonial as $item)
+                                <div class="col-md-4 col-sm-6 text-center">
+                                    <div class="lab-card">
+                                        <div style="height: 100px" class="icon">
+                                            <img src="/{{ $item -> link }}" alt="">
+                                        </div>
+                                        <h2> {{ $item -> name }} </h2>
+                                        <p> {{ $item -> job }} </p>
+                                        <p> {{ $item -> desc }} </p>
+                                    </div>
+
+                                    <!-- Button trigger modal -->
+                                    {{-- BTN --}}
+                                    {{-- EDIT --}}
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-primary mb-1" data-toggle="modal"
+                                            data-target="#editTesti{{$item -> id}} ">
+                                            Modifier</button>
+                                        </div>
+
+                                    {{-- DELETE --}}
+                                    <form method="post" action="/testimonials/{{ $item -> id }}">
+                                        @csrf
+                                        @method('delete')
+
+                                        <div class="text-center">
+                                            <button type="submit" class="btn btn-danger">Supprimer</button>
+                                        </div>
+                                    </form>
+                                    <hr>
+                                </div>
+
+                                {{-- MODAL EDIT --}}
+                                <div id="editTesti{{$item -> id}}" class="modal" tabindex="-1" role="dialog">
+                                    <form method="post" action="/testimonials/{{ $item->id }}" class="mb-1">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Modifier le texte</h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+
+                                                {{-- BODY --}}
+                                                <div class="modal-body">
+                                                    @csrf
+                                                    @method('put')
+
+                                                    <div class="form-group">
+                                                        <input type="text" placeholder="{{ $item -> name }}"
+                                                            name="name" class="form-control mb-1" id=""
+                                                            aria-describedby="emailHelp">
+                                                        <input type="text" value="{{ $item -> job }}"
+                                                            name="job" class="form-control mb-1" id=""
+                                                            aria-describedby="emailHelp">
+                                                        <input type="text" value="{{ $item -> desc }}"
+                                                            name="desc" class="form-control mb-1" id=""
+                                                            aria-describedby="emailHelp">
+                                                        <input type="text" value="{{ $item -> link }}"
+                                                            name="link" class="form-control mb-1" id=""
+                                                            aria-describedby="emailHelp">
+                                                    </div>
+
+                                                    {{-- BOUTONS --}}
+                                                    <div class="modal-footer">
+                                                        <button type="submit" class="btn btn-primary">Modifier</button>
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                {{-- END MODAL --}}
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     @stop
