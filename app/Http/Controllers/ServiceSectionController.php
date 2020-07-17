@@ -33,9 +33,17 @@ class ServiceSectionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        $service = new ServiceSection();
+        // STORE
+        $service -> title = request('title');
+        $service -> desc = request('desc');
+        $service -> icon = request('icon');
+
+        $service->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -67,9 +75,18 @@ class ServiceSectionController extends Controller
      * @param  \App\ServiceSection  $serviceSection
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ServiceSection $serviceSection)
+    public function update($id)
     {
-        //
+        $service = ServiceSection::find($id);
+        
+        $service -> title = request('title');
+        $service ->save();
+        $service -> desc = request('desc');
+        $service ->save();
+        $service -> icon = request('icon');
+        $service ->save();
+        
+        return redirect()->back();
     }
 
     /**
@@ -78,8 +95,9 @@ class ServiceSectionController extends Controller
      * @param  \App\ServiceSection  $serviceSection
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ServiceSection $serviceSection)
+    public function destroy($id)
     {
-        //
+        ServiceSection::where('id', $id)->delete();
+        return redirect()->back();
     }
 }

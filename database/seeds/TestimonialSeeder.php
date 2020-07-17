@@ -14,42 +14,42 @@ class TestimonialSeeder extends Seeder
     {
         DB::table('testimonials')->insert([
             "desc" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.",
-            "link" => "img/avatar/01.jpg",
+            "link" => "avatar/01.jpg",
             "name" => "Michael Smith",
             "job" => "CEO Company",
         ]);
 
         DB::table('testimonials')->insert([
             "desc" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.",
-            "link" => "img/avatar/02.jpg",
+            "link" => "avatar/02.jpg",
             "name" => "Michaela Smith",
             "job" => "Programmer",
         ]);
 
         DB::table('testimonials')->insert([
             "desc" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.",
-            "link" => "img/avatar/01.jpg",
+            "link" => "avatar/01.jpg",
             "name" => "Michael Smith",
             "job" => "CEO Company",
         ]);
 
         DB::table('testimonials')->insert([
             "desc" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.",
-            "link" => "img/avatar/02.jpg",
+            "link" => "avatar/02.jpg",
             "name" => "Michaela Smith",
             "job" => "Programmer",
         ]);
 
         DB::table('testimonials')->insert([
             "desc" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.",
-            "link" => "img/avatar/01.jpg",
+            "link" => "avatar/01.jpg",
             "name" => "Michael Smith",
             "job" => "CEO Company",
         ]);
 
         DB::table('testimonials')->insert([
             "desc" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequa.",
-            "link" => "img/avatar/02.jpg",
+            "link" => "avatar/02.jpg",
             "name" => "Michaela Smith",
             "job" => "Programmer",
         ]);

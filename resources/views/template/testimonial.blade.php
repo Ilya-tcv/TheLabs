@@ -15,7 +15,7 @@
 							<p> {{$item -> desc}} </p>
 							<div class="client-info">
 								<div class="avatar">
-									<img src=" {{$item -> link}} " alt="">
+									<img src="{{asset('storage/' . $item -> link)}}" alt="">
 								</div>
 								<div class="client-name">
 									<h2> {{$item -> name}} </h2>

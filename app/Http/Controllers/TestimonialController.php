@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Testimonial;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TestimonialController extends Controller
 {
@@ -33,14 +34,19 @@ class TestimonialController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store()
+    public function store(Request $request)
     {
         $testimonial = new Testimonial();
+        
         // STORE
         $testimonial -> name = request('name');
         $testimonial -> job = request('job');
         $testimonial -> desc = request('desc');
-        $testimonial -> link = request('link');
+        
+        // storage
+        $img = $request-> link;  // récupere l'image
+        $filename = Storage::disk('public')->put('', $img);
+        $testimonial -> link = $filename;
 
         $testimonial->save();
 
@@ -76,33 +82,30 @@ class TestimonialController extends Controller
      * @param  \App\Testimonial  $testimonial
      * @return \Illuminate\Http\Response
      */
-    public function update($id)
+    public function update(Request $request, $id)
     {
         $testimonial = Testimonial::find($id);
         
-        // if (request('name') != NULL) {
-        //     $testimonial -> name = request('name');
-        //     $testimonial ->save();
-        // } else if (request('job') != NULL) {
-        //     $testimonial -> job = request('job');
-        //     $testimonial ->save();
-        // } else if (request('desc') != NULL){
-        //     $testimonial -> desc = request('desc');
-        //     $testimonial ->save();
-        // } else if (request('link') != NULL){
-        //     $testimonial -> link = request('link');
-        //     $testimonial ->save();
-        // }
-
-        //V2
+        // V2
         $testimonial -> name = request('name');
         $testimonial ->save();
         $testimonial -> job = request('job');
         $testimonial ->save();
         $testimonial -> desc = request('desc');
         $testimonial ->save();
-        $testimonial -> link = request('link');
-        $testimonial ->save();
+        
+
+        if($request->hasFile('link')){
+            // delete la copie dans le storage
+            Storage::disk('public')->delete($testimonial->link);
+
+            // storage
+            $img = request('link');  // récupere l'image
+            $filename = Storage::disk('public')->put('', $img);
+            $testimonial -> link = $filename;
+            
+            $testimonial->save();
+        }
         
         return redirect()->back();
     }

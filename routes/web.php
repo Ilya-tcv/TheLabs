@@ -42,6 +42,8 @@ Route::resource('/title', 'TitleController');
 Route::resource('/aboutSec', 'AboutSectionController');
 Route::resource('/video', 'VideoController');
 Route::resource('/testimonials', 'TestimonialController');
+Route::resource('/service', 'ServiceSectionController');
+Route::resource('/team', 'TeamController');
 
 
 // JE SAIS PAS
