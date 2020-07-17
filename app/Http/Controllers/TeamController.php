@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TeamController extends Controller
 {
@@ -35,7 +36,20 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $team = new Team();
+        
+        // STORE
+        $team -> title = request('title');
+        $team -> job = request('job');
+        
+        // storage
+        $img = $request-> link;  // récupere l'image
+        $filename = Storage::disk('public')->put('', $img);
+        $team -> link = $filename;
+
+        $team->save();
+
+        return redirect()->back();
     }
 
     /**
@@ -67,9 +81,30 @@ class TeamController extends Controller
      * @param  \App\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Team $team)
+    public function update(Request $request, $id)
     {
-        //
+        $team = Team::find($id);
+        
+        // V2
+        $team -> title = request('title');
+        $team ->save();
+        $team -> job = request('job');
+        $team ->save();
+        
+
+        if($request->hasFile('link')){
+            // delete la copie dans le storage
+            Storage::disk('public')->delete($team->link);
+
+            // storage
+            $img = request('link');  // récupere l'image
+            $filename = Storage::disk('public')->put('', $img);
+            $team -> link = $filename;
+            
+            $team->save();
+        }
+        
+        return redirect()->back();
     }
 
     /**
@@ -78,8 +113,9 @@ class TeamController extends Controller
      * @param  \App\Team  $team
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Team $team)
+    public function destroy($id)
     {
-        //
+        Team::where('id', $id)->delete();
+        return redirect()->back();
     }
 }

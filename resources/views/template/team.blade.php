@@ -10,7 +10,7 @@
 				<!-- single member -->
 				<div class="col-sm-4">
 					<div class="member">
-						<img src=" {{$item -> link}} " alt="">
+						<img src="{{asset('storage/' . $item -> link)}}" alt="">
 						<h2> {{$item -> title}} </h2>
 						<h3> {{$item -> job}} </h3>
 					</div>

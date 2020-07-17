@@ -580,15 +580,11 @@
                                         {{-- @method('post') --}}
 
                                         <div class="form-group">
-                                            <input type="text" placeholder="Nom" name="name" class="form-control " id=""
+                                            <input type="text" placeholder="Nom" name="title" class="form-control " id=""
                                                 aria-describedby="emailHelp">
                                         </div>
                                         <div class="form-group">
                                             <input type="text" placeholder="Job" value="" name="job"
-                                                class="form-control " id="" aria-describedby="emailHelp">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" placeholder="Description" value="" name="desc"
                                                 class="form-control " id="" aria-describedby="emailHelp">
                                         </div>
 
@@ -614,7 +610,7 @@
                     <div class="container">
                         <div class="row">
                             <!-- single card -->
-                            @foreach($testimonial as $item)
+                            @foreach($team as $item)
                                 <div class="col-md-4 col-sm-6 text-center">
                                     <div class="lab-card">
                                         <div style="height: 100px; max-content:100%" class="icon">
@@ -622,9 +618,8 @@
                                                 src="{{ asset('storage/' . $item -> link) }}"
                                                 alt="">
                                         </div>
-                                        <h2> {{ $item -> name }} </h2>
+                                        <h2> {{ $item -> title }} </h2>
                                         <p> {{ $item -> job }} </p>
-                                        <p> {{ $item -> desc }} </p>
                                     </div>
 
                                     <!-- Button trigger modal -->
@@ -632,12 +627,12 @@
                                     {{-- EDIT --}}
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-primary mb-1" data-toggle="modal"
-                                            data-target="#editTesti{{ $item -> id }} ">
+                                            data-target="#editTeam{{ $item -> id }} ">
                                             Modifier</button>
                                     </div>
 
                                     {{-- DELETE --}}
-                                    <form method="post" action="/testimonials/{{ $item -> id }}">
+                                    <form method="post" action="/team/{{ $item -> id }}">
                                         @csrf
                                         @method('delete')
 
@@ -649,8 +644,8 @@
                                 </div>
 
                                 {{-- MODAL EDIT --}}
-                                <div id="editTesti{{ $item -> id }}" class="modal" tabindex="-1" role="dialog">
-                                    <form action="/testimonials/{{ $item -> id }}" method="post"
+                                <div id="editTeam{{ $item -> id }}" class="modal" tabindex="-1" role="dialog">
+                                    <form action="/team/{{ $item -> id }}" method="post"
                                         enctype="multipart/form-data">
                                         @csrf
                                         @method('put')
@@ -658,7 +653,7 @@
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title">Modifier le texte</h5>
+                                                    <h5 class="modal-title">Modifier le membre</h5>
                                                     <button type="button" class="close" data-dismiss="modal"
                                                         aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
@@ -668,17 +663,12 @@
                                                 {{-- BODY --}}
                                                 <div class="modal-body">
                                                     <div class="form-group">
-                                                        <input type="text" value="{{ $item -> name }}" name="name"
+                                                        <input type="text" value="{{ $item -> title }}" name="title"
                                                             class="form-control mb-1" id=""
                                                             aria-describedby="emailHelp">
                                                         <input type="text" value="{{ $item -> job }}" name="job"
                                                             class="form-control mb-1" id=""
                                                             aria-describedby="emailHelp">
-                                                        <input type="text" value="{{ $item -> desc }}" name="desc"
-                                                            class="form-control mb-1" id=""
-                                                            aria-describedby="emailHelp">
-
-
 
                                                         {{-- STORAGE --}}
                                                         <label for="inputFile">Upload</label>
